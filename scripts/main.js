@@ -1,8 +1,9 @@
 ﻿$(function(){
 
     $(".show__block").hide();
-    $("#nav__h div:eq(0)").offset({left:300});
-
+    $("#nav__h div:eq(0)").css('float','left');
+    $("#nav__h div:eq(0)").css('margin-left','230px');
+    $("#nav__h div:eq(1)").css('margin-right','10px');
 
     // создаем объект ШРИ
     var Shri = {
@@ -16,7 +17,7 @@
         return _.template( $('#tpl_Teacher' + id).html() );
     };
 
-    //У Ч И Т Е Л Ь - - Y -& - U
+    //У Ч И Т Е Л Ь - - Y - & - U
     //создаем модель Y -& - U
     Shri.Models.Teacher = Backbone.Model.extend({})
     //коллекцию Y -& - U
@@ -164,15 +165,24 @@
         $(".show__block").prepend("<div class=\"closee\"></div>");
     });
     $("#nav__h div:eq(0)").click(function(){
-        $("#mainContainer").animate({
+         var leftPosition = $("#mainContainer").css("left");
+         //console.log(leftPosition);
+         if (leftPosition!="0px") {
+            $("#mainContainer").animate({
             "left":"+=270px"
-        }, 1000);
+            }, 1000);
+        };
+        
     });
     $("#nav__h div:eq(1)").click(function(){
-
-        $("#mainContainer").animate({
+        var rightPosition = parseInt($("#mainContainer").css("right"));
+        console.log(rightPosition);
+        if (rightPosition<-10) {
+            $("#mainContainer").animate({
             "left":"-=270px"
-        },  1000);
+            },  1000);
+        };
+        
     });
     $("#Students").css("display","none");
         
@@ -181,12 +191,14 @@
         $("#Teachers").css("display","block");
         $("#Students").css("display","none");
         $("#mainContainer").css("width","1900px");
+        $("#mainContainer").css("left","0px");
 
     });
     $("#nav__l div:eq(1)").click(function(){
         $("#Teachers").css("display","none");
         $("#Students").css("display","block");
         $("#mainContainer").css("width","3400px");
+        $("#mainContainer").css("left","0px");
     });
     $('#mainContainer').on('click', '.t_name', function(e){
         $(this).parent().next(".infoperson").prepend("<div class=\"closee\"></div>");
