@@ -224,23 +224,22 @@ iframe{
 }
 #nav__h{
 	position: absolute;
+	width: 100%;
 	top: 570px;
-	right: 50px;
 	z-index: 4;
 }
 #nav__h div{
-	background: #1f242b;
 	display: block;
-	color: #fff;
-	padding-top: 0px;
+	float: right;
 	width: 100px;
 	height: 100px;	
+	padding-top: 0px;
+	background: #1f242b;
 	border-radius: 120px;
 	font-size: 40px;
 	text-decoration: none;
 	text-align: center;
-	margin: 0 20px 20px;
-	float: left;
+	color: #fff;
 	cursor: pointer;
 }
 #nav__h div:hover{
