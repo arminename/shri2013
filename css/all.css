@@ -115,9 +115,13 @@ iframe{
     z-index: 3;
 }
 #slide4{
-	background: #fff;
+	background: #ffdf00 url("../img/twi_shri.svg");
     z-index: 4;
-    height: 600px;
+}
+#slide5{
+	background: #fff url("../img/insta_shri.svg");
+	min-height: 500px;
+	z-index: 5;
 }
 
 #slide0 > .container{
@@ -151,16 +155,15 @@ iframe{
 	overflow: hidden;
 	padding-left: 230px;
 }
-#slide4{
-	background: #ffdf00 url("../img/twi_shri.svg");
-}
+
 #slide4 .slide{
 	padding-top: 10px !important;
 }
-#slide4 .container{
+#slide4 .container, #slide5 .container{
 	width: 600px;
 	margin: 0px auto;
 }
+
 .show__block{
 	position: absolute;
 	background: #fff;
